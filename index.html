@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+    <style>
+        .fff{
+            background-color: black;
+        }
+        h1{
+            font-size: 50px;
+            color: aliceblue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        p{
+            color: antiquewhite;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+        .ail{
+            padding: 15px 40px 15px 40px;
+            border: none;
+            background-color: black;
+            border-radius: 10px;
+            color: azure;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+       .bo{
+        padding: 20px 104px 20px 104px;
+        background-image: linear-gradient(to right,cyan,black);
+        border-radius: 30px;
+        border: none;
+        font-size: larger;
+        font-weight: 700;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: azure;
+        
+       }
+       .center{
+           text-align: center;
+       }
+       hr{
+           border-color: aqua;
+       }
+       .mini{
+           background-color: black;
+           color: whitesmoke;
+           border: none;
+           margin: 15px;
+           padding: 10px;
+           font-size: 25px;
+            font-weight: 700;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+       .mini:hover{
+           background-image: linear-gradient(to right,grey,rgb(28, 80, 104));
+           transition-duration: 0.3s;
+           border-radius: 15px;
+       }
+       .wrapper{
+position: absolute;
+top: 45px;
+left: 80%;
+transform: translate(-50%,-50%);
+}
+
+.searchbox{
+position: relative;
+}
+
+.searchbox .input{
+width: 0px;
+border: 0px;
+height: 35px;
+padding: 0px 17px;
+border-radius: 50px;
+
+outline: none;
+color: darkcyan;
+
+font-weight: 500;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 17px;
+transition: all 0.5s linear;
+}
+
+.searchbtn{
+position: absolute;
+top: 0;
+right: 0px;
+background: #fff;
+width: 35px;
+height: 35px;
+border-radius: 50%;
+cursor: pointer;
+transition: all 0.5s 0.6s linear;
+}
+
+.searchbtn .fas{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+color: darkcyan;
+font-size: 20px;
+transition: all 0.5s 0.6s linear;
+}
+
+/* jquery class */
+.searchbtn.bg-green{
+background: darkcyan;
+transition: all 0.2s linear;
+}
+
+.searchbtn .fas.color-white{
+color: cyan;
+transition: all 0.2s linear;
+}
+
+.searchbox .input.active-width{
+width: 330px;
+}    
+    </style>
+</head>
+
+<body class="fff">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <div>
+        <button class="mini">HOME</button>
+        <button class="mini">ABOUT</button>
+        <button class="mini">CONTACT</button>
+        
+    </div><hr>
+    <form>
+        <div class="center">
+            <h1>Login to Your Account</h1>
+            <p>Please enter the details in the site carefully, so that you can access the site </p><br/>
+            <input class="ail" type="email" placeholder="Enter Email ID" required><br/><br/>
+            <input class="ail"  type="password" placeholder="Enter Password" required><br/><br/>
+            <button class="bo">LOGIN</button>
+            <h2 class="ail">Forgot password</h2>
+        </div>
+        <div class="wrapper">
+            <div class="searchbox">
+              <input type="text" class="input" placeholder="Search Here..">
+        
+              <div class="searchbtn">
+                <i class="fas fa-search"></i>
+              </div>
+        
+            </div>
+          </div>
+        <script type="text/javascript">
+        $(".searchbtn").click(function(){
+          $(this).toggleClass("bg-green");
+          $(".fas").toggleClass("color-white");
+          $(".input").focus().toggleClass("active-width").val('');
+        });
+        </script>
+    </form>
+    
+</body>
+</html>
